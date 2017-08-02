@@ -14,7 +14,7 @@
   ],
   "require": {
     "php": "^7.1",
-    "azettl/php-nano-template": "0.0.2"
+    "azettl/php-nano-template": "0.0.3"
   },
   "autoload": {
     "classmap": ["translation.php"]
