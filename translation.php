@@ -36,6 +36,10 @@ final class translation{
 
   public function setBasePath(string $sBaseTranslationPath) : void
   {
+    if(strrpos($sBaseTranslationPath, '/') != strlen($sBaseTranslationPath)) {
+      $sBaseTranslationPath .= '/';
+    }
+
     $this->sBaseTranslationPath = $sBaseTranslationPath;
   }
 

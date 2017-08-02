@@ -12,7 +12,7 @@ final class translationTest extends TestCase
     $oTranslation->setBasePath('test');
 
     $this->assertEquals(
-      'test', 
+      'test/', 
       $oTranslation->getBasePath()
     );
   }
@@ -58,6 +58,18 @@ final class translationTest extends TestCase
     $this->expectException(Exception::class);
     $oTranslation = new com\azettl\nano\translation();
     $oTranslation->setBasePath('tests/translationsWrong/');
+    $oTranslation->setFileNamePattern('test.%s.json');
+
+    $this->assertEquals(
+      'My Value', 
+      $oTranslation->translate('MY_KEY', 'en')
+    );
+  }
+
+  public function testCanTranslateWithFilePathWithoutSlash() : void
+  {
+    $oTranslation = new com\azettl\nano\translation();
+    $oTranslation->setBasePath('tests/translations');
     $oTranslation->setFileNamePattern('test.%s.json');
 
     $this->assertEquals(
