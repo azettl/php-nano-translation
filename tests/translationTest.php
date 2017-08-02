@@ -78,4 +78,17 @@ final class translationTest extends TestCase
       $oTranslation->translate('MY_KEY', 'en')
     );
   }
+
+  public function testCanTranslateWithInvalidJSON() : void
+  {
+    $this->expectException(Exception::class);
+    $oTranslation = new com\azettl\nano\translation();
+    $oTranslation->setBasePath('tests/translations/');
+    $oTranslation->setFileNamePattern('test.%s.json');
+
+    $this->assertEquals(
+      'My Value', 
+      $oTranslation->translate('MY_KEY', 'enInvalidJSON')
+    );
+  }
 }
