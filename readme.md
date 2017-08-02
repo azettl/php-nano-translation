@@ -1,5 +1,7 @@
 # php-nano-translation - Translation Engine
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/95fe44713833430bb751f807488c0513)](https://www.codacy.com/app/azettl/php-nano-translation?utm_source=github.com&utm_medium=referral&utm_content=azettl/php-nano-translation&utm_campaign=badger)
+
 The php-nano-translation class gives you the correct translation from the requested JSON file.
 
 ## Installation
