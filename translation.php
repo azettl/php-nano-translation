@@ -91,26 +91,26 @@ final class translation{
   private function checkJSON()
   {
     switch(json_last_error()) {
-        case JSON_ERROR_NONE:
-            // Valid JSON
+      case JSON_ERROR_NONE:
+        // Valid JSON
         break;
-        case JSON_ERROR_DEPTH:
-            throw new \Exception('JSON: Maximum stack depth exceeded');
+      case JSON_ERROR_DEPTH:
+        throw new \Exception('JSON: Maximum stack depth exceeded');
         break;
-        case JSON_ERROR_STATE_MISMATCH:
-            throw new \Exception('JSON: Underflow or the modes mismatch');
+      case JSON_ERROR_STATE_MISMATCH:
+        throw new \Exception('JSON: Underflow or the modes mismatch');
         break;
-        case JSON_ERROR_CTRL_CHAR:
-            throw new \Exception('JSON: Unexpected control character found');
+      case JSON_ERROR_CTRL_CHAR:
+        throw new \Exception('JSON: Unexpected control character found');
         break;
-        case JSON_ERROR_SYNTAX:
-            throw new \Exception('JSON: Syntax error, malformed JSON');
+      case JSON_ERROR_SYNTAX:
+        throw new \Exception('JSON: Syntax error, malformed JSON');
         break;
-        case JSON_ERROR_UTF8:
-            throw new \Exception('JSON: Malformed UTF-8 characters, possibly incorrectly encoded');
+      case JSON_ERROR_UTF8:
+        throw new \Exception('JSON: Malformed UTF-8 characters, possibly incorrectly encoded');
         break;
-        default:
-            throw new \Exception('JSON: Unknown error');
+      default:
+        throw new \Exception('JSON: Unknown error');
         break;
     }
   }
