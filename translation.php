@@ -74,6 +74,9 @@ final class translation{
     }
     
     if(count($aData) > 0) {
+      if (!class_exists('\com\azettl\nano\template')) {
+        throw new \Exception('The class \com\azettl\nano\template is missing.');
+      }
       $oTemplate = new \com\azettl\nano\template();
       $oTemplate->setTemplate($oTranslations->$sKey);
       $oTemplate->setData($aData);

@@ -42,6 +42,7 @@ final class translationTest extends TestCase
 
   public function testCanTranslateWithVariable() : void
   {
+    $this->expectException(Exception::class);
     $oTranslation = new com\azettl\nano\translation();
     $oTranslation->setBasePath('tests/translations/');
     $oTranslation->setFileNamePattern('test.%s.json');
@@ -49,6 +50,32 @@ final class translationTest extends TestCase
     $this->assertEquals(
       'My Value', 
       $oTranslation->translate('MY_KEY_WITH_VARS', 'en', ['variable' => 'test'])
+    );
+  }
+
+  public function testCanTranslateWithWrongFilePath() : void
+  {
+    $this->expectException(Exception::class);
+    $oTranslation = new com\azettl\nano\translation();
+    $oTranslation->setBasePath('tests/translationsWrong/');
+    $oTranslation->setFileNamePattern('test.%s.json');
+
+    $this->assertEquals(
+      'My Value', 
+      $oTranslation->translate('MY_KEY', 'en')
+    );
+  }
+
+  public function testCanTranslateWithWrongFileName() : void
+  {
+    $this->expectException(Exception::class);
+    $oTranslation = new com\azettl\nano\translation();
+    $oTranslation->setBasePath('tests/translations/');
+    $oTranslation->setFileNamePattern('test.%s.jsonWrong');
+
+    $this->assertEquals(
+      'My Value', 
+      $oTranslation->translate('MY_KEY', 'en')
     );
   }
 }
