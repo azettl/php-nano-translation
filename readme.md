@@ -20,4 +20,4 @@ $oTranslation->setFileNamePattern('test.%s.json');
 echo $oTranslation->translate('MY_KEY_WITH_VARS', 'en', ['variable' => 'test']);
 ```
 
-Returns: "My test Value"
+Translation Key Value: "My {variable} Value" Returns: "My test Value"
