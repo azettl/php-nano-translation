@@ -3,7 +3,7 @@
 namespace com\azettl\nano;
 
 /**
- * The php-nano-translation class replaces placeholders in a string with values from an array.
+ * The php-nano-translation class gives you the correct translation from the requested JSON file.
  *
  * @package  php-nano-translation
  * @author   Andreas Zettl <info@azettl.net>
