@@ -1,0 +1,19 @@
+{
+  "name": "azettl/php-nano-translation",
+  "description": "The php-nano-translation class gives you the correct translation from the requested JSON file.",
+  "keywords": [
+    "translation", "engine"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andreas Zettl",
+      "email": "info@azettl.net",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "azettl/php-nano-template": "0.0.2"
+  }
+}

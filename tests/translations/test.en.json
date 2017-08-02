@@ -1,0 +1,4 @@
+{
+  "MY_KEY": "My Value",
+  "MY_KEY_WITH_VARS": "My {variable} Value"
+}
