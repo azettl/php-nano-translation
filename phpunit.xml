@@ -17,7 +17,7 @@
   
   <filter>
     <whitelist addUncoveredFilesFromWhitelist="true">
-      <file>translation.php</file>
+      <file>./translation.php</file>
     </whitelist>
   </filter>
 </phpunit>
