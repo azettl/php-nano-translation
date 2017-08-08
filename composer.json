@@ -16,6 +16,9 @@
     "php": "^7.1",
     "azettl/php-nano-template": "0.0.3"
   },
+  "require-dev": {
+      "codacy/coverage": "dev-master"
+  },
   "autoload": {
     "classmap": ["translation.php"]
   }
