@@ -10,7 +10,7 @@ final class translationTest extends TestCase
     $oTranslation = new translation();
     $oTranslation->setBasePath('test');
 
-    $this->assertEquals(
+    $this->assertSame(
       'test/', 
       $oTranslation->getBasePath()
     );
@@ -21,7 +21,7 @@ final class translationTest extends TestCase
     $oTranslation = new translation();
     $oTranslation->setFileNamePattern('test');
 
-    $this->assertEquals(
+    $this->assertSame(
       'test', 
       $oTranslation->getFileNamePattern()
     );
@@ -33,7 +33,7 @@ final class translationTest extends TestCase
     $oTranslation->setBasePath('tests/translations/');
     $oTranslation->setFileNamePattern('test.%s.json');
 
-    $this->assertEquals(
+    $this->assertSame(
       'My Value', 
       $oTranslation->translate('MY_KEY', 'en')
     );
@@ -43,7 +43,7 @@ final class translationTest extends TestCase
   {
     $oTranslation = new translation('tests/translations/', 'test.%s.json');
 
-    $this->assertEquals(
+    $this->assertSame(
       'My Value', 
       $oTranslation->translate('MY_KEY', 'en')
     );
@@ -56,7 +56,7 @@ final class translationTest extends TestCase
     $oTranslation->setBasePath('tests/translations/');
     $oTranslation->setFileNamePattern('test.%s.json');
 
-    $this->assertEquals(
+    $this->assertSame(
       'My Value', 
       $oTranslation->translate('MY_WRONG_KEY', 'en')
     );
@@ -69,7 +69,7 @@ final class translationTest extends TestCase
     $oTranslation->setBasePath('tests/translations/');
     $oTranslation->setFileNamePattern('test.%s.json');
 
-    $this->assertEquals(
+    $this->assertSame(
       'My test Value', 
       $oTranslation->translate('MY_KEY_WITH_VARS', 'en', ['variable' => 'test'])
     );
@@ -87,7 +87,7 @@ final class translationTest extends TestCase
       $this->expectException(Exception::class);
     }
 
-    $this->assertEquals(
+    $this->assertSame(
       'My test Value', 
       $oTranslation->translate('MY_KEY_WITH_VARS', 'en', ['variable' => 'test'])
     );
@@ -100,7 +100,7 @@ final class translationTest extends TestCase
     $oTranslation->setBasePath('tests/translationsWrong/');
     $oTranslation->setFileNamePattern('test.%s.json');
 
-    $this->assertEquals(
+    $this->assertSame(
       'My Value', 
       $oTranslation->translate('MY_KEY', 'en')
     );
@@ -112,7 +112,7 @@ final class translationTest extends TestCase
     $oTranslation->setBasePath('tests/translations');
     $oTranslation->setFileNamePattern('test.%s.json');
 
-    $this->assertEquals(
+    $this->assertSame(
       'My Value', 
       $oTranslation->translate('MY_KEY', 'en')
     );
@@ -125,7 +125,7 @@ final class translationTest extends TestCase
     $oTranslation->setBasePath('tests/translations/');
     $oTranslation->setFileNamePattern('test.%s.jsonWrong');
 
-    $this->assertEquals(
+    $this->assertSame(
       'My Value', 
       $oTranslation->translate('MY_KEY', 'en')
     );
@@ -138,7 +138,7 @@ final class translationTest extends TestCase
     $oTranslation->setBasePath('tests/translations/');
     $oTranslation->setFileNamePattern('test.%s.json');
 
-    $this->assertEquals(
+    $this->assertSame(
       'My Value', 
       $oTranslation->translate('MY_KEY', 'enJSON_ERROR_SYNTAX')
     );
