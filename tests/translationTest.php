@@ -2,10 +2,11 @@
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers nano
+ * @covers \com\azettl\nano\translation
  */
 final class translationTest extends TestCase
 {
+
   public function testCanSetBasePath() : void
   {
     $oTranslation = new com\azettl\nano\translation();
